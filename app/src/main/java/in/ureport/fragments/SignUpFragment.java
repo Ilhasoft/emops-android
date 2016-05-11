@@ -91,8 +91,8 @@ public class SignUpFragment extends UserInfoBaseFragment {
             setSignupStatusBarColor(R.color.dark_cyan_highlight);
             confirm.setBackgroundResource(R.drawable.shape_round_simple_blue_button);
         } else {
-            toolbar.setBackgroundColor(getResources().getColor(R.color.light_yellow_highlight));
-            setSignupStatusBarColor(R.color.dark_yellow_highlight);
+            toolbar.setBackgroundColor(getResources().getColor(R.color.blue));
+            setSignupStatusBarColor(R.color.dark_blue);
         }
     }
 
