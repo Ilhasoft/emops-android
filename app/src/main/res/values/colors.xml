@@ -8,6 +8,8 @@
     <color name="light_window_background">#eeeeee</color>
     <color name="white_window_background">#fafafa</color>
     <color name="yellow">#ebce2c</color>
+    <color name="blue">#00afef</color>
+    <color name="dark_blue">#008ec2</color>
 
     <color name="highlight">#ec2248</color>
     <color name="light_gray">#e8e8e8</color>

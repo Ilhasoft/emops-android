@@ -131,7 +131,7 @@ public class LoginFragment extends Fragment implements Firebase.AuthResultHandle
     @Override
     public void onResume() {
         super.onResume();
-        statusBarDesigner.setStatusBarColorById(getActivity(), R.color.yellow);
+        statusBarDesigner.setStatusBarColorById(getActivity(), R.color.blue);
     }
 
     private void setupView(View view) {

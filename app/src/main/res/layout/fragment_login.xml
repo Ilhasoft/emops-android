@@ -4,7 +4,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/yellow">
+    android:background="@color/blue">
 
     <TextView
         android:id="@+id/skipLogin"
@@ -27,7 +27,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:src="@drawable/logo_ureport_global"/>
+            android:src="@drawable/logo_unicef"/>
 
     </FrameLayout>
 
@@ -124,11 +124,11 @@
     <TextView
         android:id="@+id/signUp"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="50dp"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
         android:layout_marginTop="20dp"
-        android:background="#f3e079"
+        android:background="#7fff"
         android:gravity="center"
         android:text="@string/login_sign_up"
         android:elevation="10dp"/>
