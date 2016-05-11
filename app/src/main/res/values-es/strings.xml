@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources xmlns:tools="http://schemas.android.com/tools">
-  <string name="app_name">U-Report</string>
+  <string name="app_name">E-Report</string>
   <string name="login_email">Correo Electrónico</string>
   <string name="login_password">Clave</string>
   <string name="email">Correo Electrónico</string>

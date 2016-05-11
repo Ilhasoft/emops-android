@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:ignore="MissingTranslation" >
 
-    <string name="app_name">U-Report</string>
+    <string name="app_name">E-Report</string>
 
     <string name="login_email">Email</string>
     <string name="login_password">Password</string>

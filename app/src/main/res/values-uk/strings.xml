@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources xmlns:tools="http://schemas.android.com/tools">
-  <string name="app_name">U-Report Україна</string>
+  <string name="app_name">E-Report</string>
   <string name="login_email">електронна адреса</string>
   <string name="login_password">Пароль</string>
   <string name="email">електронна адреса</string>
