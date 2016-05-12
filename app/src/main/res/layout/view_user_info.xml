@@ -117,15 +117,4 @@
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/startChatting"
-        android:layout_width="140dp"
-        android:layout_height="40dp"
-        android:layout_gravity="center"
-        android:layout_marginBottom="20dp"
-        android:padding="10dp"
-        android:background="@drawable/shape_default_button"
-        android:textColor="@android:color/white"
-        android:text="@string/label_chat_invite"/>
-
 </LinearLayout>

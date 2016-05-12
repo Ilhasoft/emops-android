@@ -12,11 +12,9 @@ import android.widget.TextView;
 
 import com.firebase.client.DataSnapshot;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import in.ureport.R;
-import in.ureport.fragments.ChatsFragment;
 import in.ureport.fragments.PollsFragment;
 import in.ureport.fragments.StoriesListFragment;
 import in.ureport.helpers.ValueEventListenerAdapter;
@@ -30,9 +28,7 @@ import in.ureport.models.ChatRoom;
 import in.ureport.models.Story;
 import in.ureport.models.User;
 import in.ureport.models.Notification;
-import in.ureport.models.holders.ChatRoomHolder;
 import in.ureport.models.holders.NavigationItem;
-import in.ureport.network.ChatRoomServices;
 import in.ureport.network.UserServices;
 import in.ureport.pref.SystemPreferences;
 import in.ureport.views.adapters.NavigationAdapter;
@@ -67,13 +63,9 @@ public class MainActivity extends BaseActivity implements OnSeeOpenGroupsListene
     private ViewPager pager;
 
     private StoriesListFragment storiesListFragment;
-    private ChatsFragment chatsFragment;
 
     private LocalNotificationManager localNotificationManager;
     private Story story;
-
-    private int roomMembersLoaded = 0;
-    private boolean chatRoomFound = false;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -206,15 +198,7 @@ public class MainActivity extends BaseActivity implements OnSeeOpenGroupsListene
         NavigationItem storiesItem = new NavigationItem(storiesListFragment, getString(R.string.main_stories));
         NavigationItem pollsItem = new NavigationItem(new PollsFragment(), getString(R.string.main_polls));
 
-        NavigationItem [] navigationItems;
-        if(UserManager.isUserLoggedIn() && (UserManager.isUserCountryProgramEnabled() || UserManager.isMaster())) {
-            chatsFragment = new ChatsFragment();
-            NavigationItem chatItem = new NavigationItem(chatsFragment, getString(R.string.main_chat));
-            navigationItems = new NavigationItem[]{storiesItem, pollsItem, chatItem};
-        } else {
-            navigationItems = new NavigationItem[]{storiesItem, pollsItem};
-        }
-        return navigationItems;
+        return new NavigationItem[]{storiesItem, pollsItem};
     }
 
     private void checkIntentAction() {
@@ -264,16 +248,6 @@ public class MainActivity extends BaseActivity implements OnSeeOpenGroupsListene
         startActivity(storyViewIntent);
     }
 
-    private void createChat(User user) {
-        if(UserManager.validateKeyAction(MainActivity.this) && chatsFragment != null) {
-            Intent newChatIntent = new Intent(MainActivity.this, ChatCreationActivity.class);
-            newChatIntent.putParcelableArrayListExtra(ChatCreationActivity.EXTRA_CHAT_ROOMS
-                    , (ArrayList<ChatRoomHolder>) chatsFragment.getChatRooms());
-            if(user != null)  newChatIntent.putExtra(ChatCreationActivity.EXTRA_USER, user);
-            startActivityForResult(newChatIntent, REQUEST_CODE_CHAT_CREATION);
-        }
-    }
-
     private View.OnClickListener onNotificationsClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -302,38 +276,7 @@ public class MainActivity extends BaseActivity implements OnSeeOpenGroupsListene
 
     @Override
     public void onUserStartChatting(final User user) {
-        if(UserManager.validateKeyAction(this)) {
-            UserServices userServices = new UserServices();
 
-            userServices.loadChatRooms(UserManager.getUserId(), new ValueEventListenerAdapter() {
-                @Override
-                public void onDataChange(final DataSnapshot dataSnapshot) {
-                    super.onDataChange(dataSnapshot);
-                    roomMembersLoaded = 0;
-                    chatRoomFound = false;
-                    searchChatRoomWithUserOrCreate(dataSnapshot, user);
-                }
-            });
-        }
-    }
-
-    private void searchChatRoomWithUserOrCreate(final DataSnapshot chatRoomsSnapshot, final User user) {
-        final ChatRoomServices chatRoomServices = new ChatRoomServices();
-
-        for (final DataSnapshot chatRoom : chatRoomsSnapshot.getChildren()) {
-            chatRoomServices.loadChatRoomMembers(chatRoom.getKey(), chatMembers -> {
-                roomMembersLoaded++;
-                boolean needsChatCreation = !chatRoomFound && roomMembersLoaded >= chatRoomsSnapshot.getChildrenCount();
-
-                if(chatMembers.getUsers().size() == 2
-                && chatMembers.getUsers().contains(user)) {
-                    chatRoomFound = true;
-                    chatsFragment.startChatRoom(new ChatRoom(chatRoom.getKey()));
-                } else if(needsChatCreation) {
-                    createChat(user);
-                }
-            });
-        }
     }
 
     @Override

@@ -74,21 +74,7 @@ public class UserViewManager {
         points.setText(String.valueOf(getValue(user.getPoints())));
 
         ImageButton close = (ImageButton) customView.findViewById(R.id.close);
-        close.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                alertDialog.cancel();
-            }
-        });
-
-        Button startChatting = (Button) customView.findViewById(R.id.startChatting);
-        startChatting.setVisibility(!user.getKey().equals(UserManager.getUserId()) ? View.VISIBLE : View.GONE);
-        startChatting.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                listener.onUserStartChatting(user);
-            }
-        });
+        close.setOnClickListener(view -> alertDialog.cancel());
     }
 
     private int getValue(Integer value) {
