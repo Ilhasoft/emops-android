@@ -110,13 +110,12 @@
     <string name="cancel_dialog_button">Cancel</string>
     <string name="label_action_notifications">Notifications</string>
     <string name="about_content">
-        U-Report is a free tool for community participation, designed to address issues that the people care about. Once you have signed up you become a U-Reporter and can Chat with other U-Reporters, submit stories and answer the weekly polls. Results and ideas are shared back with the community. Issues polled include health, education, water, sanitation and hygiene, youth unemployment, HIV/AIDS, disease outbreaks and anything else people want to discuss.
-        \n\nInformation is used to connect young people with their representatives, improve UNICEF programmes and draw attention to urgent issues with national governments and the UN. NGOs, civil society and country leaders can see the information on the site to understand what the people want or need.
-        \n\nRegistration is voluntary and U-Reporters incur no costs.
-        \n\nTogether U-Reporters create positive change in the community, the nation and internationally.
+        UNICEF’s Office of Emergency Programmes (EMOPS) is the focal point for emergency assistance, humanitarian policies, staff security and support to UNICEF offices in the field, as well as strategic coordination with external humanitarian partners both within and outside the United Nations system. EMOPS thus leads efforts to ensure that UNICEF’s role in complex emergencies and natural disasters is clearly defined, that the organisation is properly equipped to fulfill that role, and that all levels of the organization are prepared to deliver our mandate. It aims to strengthen the ability of the organization to respond during times of humanitarian crisis.
+        \n\nEMOPS coordinates headquarters support to country and regional offices dealing with emergencies in terms of staffing, funding, donor relations, inter-agency issues or technical guidance. In addition, UNICEF’s Operations Centre (OPSCEN) is a 24-hour, 7 days-a-week information gathering and dissemination hub within the Office of Emergency Programmes. The centre monitors humanitarian crises, political events and security-related incidents around the world with a view to ensuring the safety of staff, and providing both field offices and senior decision-makers with critical information related to humanitarian emergencies.
+        \n\nUNICEF supports direct humanitarian action, emergency programmes and policies throughout all its Divisions and offices, but concentrates coordination within EMOPS: the Office of Emergency Programmes based in New York and Geneva.
     </string>
-    <string name="label_about_ureport">About U-Report</string>
-    <string name="about_subtitle">Voice\nMatters</string>
+    <string name="label_about_ureport">About E-Report</string>
+    <string name="about_subtitle">Office of Emergency Programmes</string>
     <string name="donation_subtitle">When you make \na donation...</string>
     <string name="label_make_donation_subtitle">Make\nDonation</string>
     <string name="make_donations_content">You help UNICEF save children and transform lives by working for a more just and secure world for young people.  You can make a difference now!</string>
@@ -146,7 +145,7 @@
     <string name="points_earning_close">Close</string>
     <string name="polls_previous_title">Previous polls</string>
     <string name="switch_country_program">Switch Mission</string>
-    <string name="about_title">About U-Report</string>
+    <string name="about_title">About E-Report</string>
     <string name="label_unicef_ambassadors">Unicef Ambassadors</string>
     <string name="ambassadors_content">
         What qualifies a singer, an actor or an athlete to represent UNICEF? And what good can celebrities really do?\n

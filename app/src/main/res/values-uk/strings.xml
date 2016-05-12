@@ -105,13 +105,12 @@
   <string name="cancel_dialog_button">Скасувати</string>
   <string name="label_action_notifications">Повідомлення</string>
   <string name="about_content">
-Ю-Репорт - це безкоштовний інструмент опитувань, призначений для вирішення проблем, що турбують молодих людей. Коли ви реєструєтесь, ви стаєте U-репортером. У додатку можна спілкуватися з іншими U-репортерами, додавати власні історії та відповідати на щотижневі опитування. Результати опитувань є загальнодоступними. Опитування включають питання охорони здоров\'я, освіти, працевлаштування молоді, ВІЛ / СНІД, і все інше, що люди хочуть обговорити.
-Інформація використовується для комунікації молодих людей, покращення програм ЮНІСЕФ та для обговорення актуальних питань з урядами, ООН та партнерами. 
-Громадські організації та представники уряду можуть користуватись інформацією на сайті, щоб зрозуміти, чого прагнуть молоді люди.
-Реєстрація є добровільною, і U-репортери не несуть ніяких витрат.
-Разом U-репортери творять позитивні зміни в суспільстві на національному та міжнародному рівні.</string>
-  <string name="label_about_ureport">Про U-Report</string>
-  <string name="about_subtitle">Думка молоді\Важлива</string>
+        UNICEF’s Office of Emergency Programmes (EMOPS) is the focal point for emergency assistance, humanitarian policies, staff security and support to UNICEF offices in the field, as well as strategic coordination with external humanitarian partners both within and outside the United Nations system. EMOPS thus leads efforts to ensure that UNICEF’s role in complex emergencies and natural disasters is clearly defined, that the organisation is properly equipped to fulfill that role, and that all levels of the organization are prepared to deliver our mandate. It aims to strengthen the ability of the organization to respond during times of humanitarian crisis.
+        \n\nEMOPS coordinates headquarters support to country and regional offices dealing with emergencies in terms of staffing, funding, donor relations, inter-agency issues or technical guidance. In addition, UNICEF’s Operations Centre (OPSCEN) is a 24-hour, 7 days-a-week information gathering and dissemination hub within the Office of Emergency Programmes. The centre monitors humanitarian crises, political events and security-related incidents around the world with a view to ensuring the safety of staff, and providing both field offices and senior decision-makers with critical information related to humanitarian emergencies.
+        \n\nUNICEF supports direct humanitarian action, emergency programmes and policies throughout all its Divisions and offices, but concentrates coordination within EMOPS: the Office of Emergency Programmes based in New York and Geneva.
+    </string>
+  <string name="label_about_ureport">Про E-Report</string>
+  <string name="about_subtitle">Управління з надзвичайних програмами</string>
   <string name="donation_subtitle">Коли ви робите доброчинний внесок ...</string>
   <string name="label_make_donation_subtitle">Зробити внесок</string>
   <string name="make_donations_content">Ви допомагаєте ЮНІСЕФ врятувати дітей і змінити життя, працюючи над більш справедливим та безпечним світом для молодих людей. Ви можете зробити зміни вже зараз!</string>
@@ -141,7 +140,7 @@
   <string name="points_earning_close">Закрити</string>
   <string name="polls_previous_title">Попередні опитування</string>
   <string name="switch_country_program">зміна місії</string>
-  <string name="about_title">Про U-Report</string>
+  <string name="about_title">Про E-Report</string>
   <string name="label_unicef_ambassadors">Посли Доброї волі ЮНІСЕФ</string>
   <string name="ambassadors_content">Які музиканти, актори та спортсмени можуть представляти ЮНІСЕФ? І що корисного можуть зробити відомі люди?
 Знаменитості, що підтримують ЮНІСЕФ - талановиті та успішні, і всі вони допомагають покращувати життя дітей у всьому світі. У кожному випадку ЮНІСЕФ співпрацює саме з тими знаменитостями, які вже продемонстрували бажання допомагати дітям.</string>
