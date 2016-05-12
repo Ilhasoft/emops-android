@@ -22,7 +22,7 @@ import in.ureport.fragments.StoriesListFragment;
 import in.ureport.helpers.ValueEventListenerAdapter;
 import in.ureport.listener.OnSeeOpenGroupsListener;
 import in.ureport.listener.OnUserStartChattingListener;
-import in.ureport.managers.CountryProgramManager;
+import in.ureport.managers.MissionManager;
 import in.ureport.managers.LocalNotificationManager;
 import in.ureport.managers.UserManager;
 import in.ureport.models.ChatMembers;
@@ -245,7 +245,7 @@ public class MainActivity extends BaseActivity implements OnSeeOpenGroupsListene
 
         if(user != null) {
             storiesListFragment.updateUser(user);
-            getToolbar().setTitle(CountryProgramManager.getCurrentCountryProgram().getName());
+            getToolbar().setTitle(MissionManager.getCurrentMission().getName());
             openStoryIfNeeded(user);
         }
     }

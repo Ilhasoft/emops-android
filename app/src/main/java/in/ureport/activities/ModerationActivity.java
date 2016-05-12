@@ -9,9 +9,8 @@ import in.ureport.R;
 import in.ureport.fragments.SelectModeratorsFragment;
 import in.ureport.fragments.StoriesModerationFragment;
 import in.ureport.listener.OnUserStartChattingListener;
-import in.ureport.managers.CountryProgramManager;
+import in.ureport.managers.MissionManager;
 import in.ureport.managers.UserManager;
-import in.ureport.models.ChatRoom;
 import in.ureport.models.User;
 import in.ureport.models.holders.NavigationItem;
 import in.ureport.views.adapters.NavigationAdapter;
@@ -24,7 +23,7 @@ public class ModerationActivity extends BaseActivity implements OnUserStartChatt
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        CountryProgramManager.setThemeIfNeeded(this);
+        MissionManager.setThemeIfNeeded(this);
         setContentView(R.layout.activity_moderation);
 
         boolean hasPermission = checkModerationPermission();
@@ -49,7 +48,7 @@ public class ModerationActivity extends BaseActivity implements OnUserStartChatt
     }
 
     private void setupView() {
-        String countryProgramName = CountryProgramManager.getCurrentCountryProgram().getName();
+        String countryProgramName = MissionManager.getCurrentMission().getName();
         setTitle(getString(R.string.title_moderation, countryProgramName));
 
         ViewPager pager = (ViewPager) findViewById(R.id.pager);

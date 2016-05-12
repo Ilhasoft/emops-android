@@ -3,7 +3,6 @@ package in.ureport.pref;
 import android.content.Context;
 
 import br.com.ilhasoft.support.preferences.Preferences;
-import in.ureport.models.rapidpro.Field;
 
 /**
  * Created by johncordeiro on 7/9/15.
@@ -17,8 +16,8 @@ public class SystemPreferences extends Preferences {
         UserLoggedId,
         UserLoggedRapidUuid,
         UserLanguage,
-        CountryCode,
-        CountryToken,
+        MissionKey,
+        MissionName,
         TutorialView,
         Moderator,
         Master
@@ -52,20 +51,20 @@ public class SystemPreferences extends Preferences {
         return getValue(Fields.UserLanguage, USER_LANGUAGE_NOT_DEFINED);
     }
 
-    public void setCountryCode(String countryCode) {
-        setValue(Fields.CountryCode, countryCode);
+    public void setMissionKey(String key) {
+        setValue(Fields.MissionKey, key);
     }
 
-    public String getCountryCode() {
-        return getValue(Fields.CountryCode, "");
+    public String getMissionKey() {
+        return getValue(Fields.MissionKey, "");
     }
 
-    public void setCountryToken(String countryCode) {
-        setValue(Fields.CountryToken, countryCode);
+    public void setMissionName(String name) {
+        setValue(Fields.MissionName, name);
     }
 
-    public String getCountryToken() {
-        return getValue(Fields.CountryToken, "");
+    public String getMissionName() {
+        return getValue(Fields.MissionName, "");
     }
 
     public void setTutorialView(boolean tutorialView) {

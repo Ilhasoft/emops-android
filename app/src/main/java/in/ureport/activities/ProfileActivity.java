@@ -7,7 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import in.ureport.R;
 import in.ureport.fragments.ProfileFragment;
 import in.ureport.listener.OnEditProfileListener;
-import in.ureport.managers.CountryProgramManager;
+import in.ureport.managers.MissionManager;
 import in.ureport.models.User;
 
 /**
@@ -24,7 +24,7 @@ public class ProfileActivity extends AppCompatActivity implements OnEditProfileL
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        CountryProgramManager.setThemeIfNeeded(this);
+        MissionManager.setThemeIfNeeded(this);
         setContentView(R.layout.activity_profile);
 
         if(savedInstanceState == null) {

@@ -70,12 +70,12 @@ public class StoryServices extends ProgramServices {
     }
 
     public void loadStoriesForUser(User user, ValueEventListener listener) {
-        getCountryProgram().child(user.getCountryProgram()).child(storyPath)
+        getMission().child(user.getMission()).child(storyPath)
                 .orderByChild("user").equalTo(user.getKey()).addListenerForSingleValueEvent(listener);
     }
 
     public void addChildEventListenerForUser(User user, ChildEventListener childEventListener) {
-        getCountryProgram().child(user.getCountryProgram()).child(storyPath)
+        getMission().child(user.getMission()).child(storyPath)
                 .orderByChild("user").equalTo(user.getKey()).addChildEventListener(childEventListener);
     }
 

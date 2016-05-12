@@ -12,7 +12,7 @@ import in.ureport.R;
 import in.ureport.fragments.ChatGroupFragment;
 import in.ureport.fragments.CreateGroupFragment;
 import in.ureport.listener.ChatRoomInterface;
-import in.ureport.managers.CountryProgramManager;
+import in.ureport.managers.MissionManager;
 import in.ureport.managers.UserManager;
 import in.ureport.models.ChatMembers;
 import in.ureport.models.GroupChatRoom;
@@ -30,7 +30,7 @@ public class OpenGroupsActivity extends AppCompatActivity implements ChatGroupAd
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        CountryProgramManager.setThemeIfNeeded(this);
+        MissionManager.setThemeIfNeeded(this);
         setContentView(R.layout.activity_open_groups);
         setupToolbar();
         setupObjects();
@@ -76,7 +76,7 @@ public class OpenGroupsActivity extends AppCompatActivity implements ChatGroupAd
         if(UserManager.validateKeyAction(this)) {
             User me = new User();
             me.setKey(UserManager.getUserId());
-            me.setCountryProgram(UserManager.getCountryCode());
+            me.setMission(UserManager.getMission());
 
             if(chatMembers.getUsers().contains(me)) {
                 showMessage(R.string.error_already_join_group);

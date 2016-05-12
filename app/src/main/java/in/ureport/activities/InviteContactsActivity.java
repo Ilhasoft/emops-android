@@ -6,7 +6,7 @@ import android.support.v7.widget.Toolbar;
 
 import in.ureport.R;
 import in.ureport.fragments.InviteContactsFragment;
-import in.ureport.managers.CountryProgramManager;
+import in.ureport.managers.MissionManager;
 
 /**
  * Created by johncordeiro on 11/09/15.
@@ -16,7 +16,7 @@ public class InviteContactsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        CountryProgramManager.setThemeIfNeeded(this);
+        MissionManager.setThemeIfNeeded(this);
         setContentView(R.layout.activity_invite_contacts);
         setupToolbar();
 

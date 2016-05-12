@@ -3,7 +3,6 @@ package in.ureport.network;
 import android.support.annotation.NonNull;
 import android.util.Log;
 
-import com.firebase.client.ChildEventListener;
 import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
@@ -17,11 +16,10 @@ import java.util.Map;
 
 import in.ureport.helpers.ValueEventListenerAdapter;
 import in.ureport.helpers.ValueIncrementerTransaction;
-import in.ureport.managers.CountryProgramManager;
+import in.ureport.managers.MissionManager;
 import in.ureport.managers.FirebaseManager;
 import in.ureport.managers.GameficationManager;
 import in.ureport.managers.UserManager;
-import in.ureport.models.Media;
 import in.ureport.models.Story;
 import in.ureport.models.User;
 
@@ -185,7 +183,7 @@ public class UserServices extends ProgramServices {
     }
 
     private Query getUserCountryProgramQuery() {
-        String countryCode = CountryProgramManager.getCurrentCountryProgram().getCode();
+        String countryCode = MissionManager.getCurrentMission().getKey();
         return FirebaseManager.getReference().child(userPath).orderByChild("countryProgram").equalTo(countryCode);
     }
 

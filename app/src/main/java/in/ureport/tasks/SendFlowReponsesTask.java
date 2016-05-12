@@ -8,7 +8,7 @@ import in.ureport.flowrunner.models.FlowAction;
 import in.ureport.flowrunner.models.FlowStep;
 import in.ureport.flowrunner.models.FlowStepSet;
 import in.ureport.helpers.ContactBuilder;
-import in.ureport.managers.CountryProgramManager;
+import in.ureport.managers.MissionManager;
 import in.ureport.managers.FlowManager;
 import in.ureport.managers.UserManager;
 import in.ureport.models.CountryProgram;
@@ -37,16 +37,14 @@ public class SendFlowReponsesTask extends ProgressTask<FlowStepSet, Void, Boolea
     protected Boolean doInBackground(FlowStepSet... params) {
         try {
             FlowStepSet flowStepSet = params[0];
-            CountryProgram countryProgram = CountryProgramManager.getCurrentCountryProgram();
             ContactBuilder contactBuilder = new ContactBuilder();
 
-            String rapidproEndpoint = getContext().getString(CountryProgramManager
-                    .getCurrentCountryProgram().getRapidproEndpoint());
+            String rapidproEndpoint = getContext().getString(R.string.rapidpro_host_address1);
             RapidProServices services = new RapidProServices(rapidproEndpoint);
 
             for (FlowStep flowStep : flowStepSet.getSteps()) {
-                services.sendReceivedMessage(UserManager.getCountryToken()
-                        , getContext().getString(countryProgram.getChannel())
+                services.sendReceivedMessage(UserManager.getMission()
+                        , getContext().getString(R.string.rapidpro_token)
                         , contactBuilder.formatUserId(UserManager.getUserId())
                         , getMessageFromStep(flowStep));
                 Thread.sleep(DELAY_BETWEEN_RESPONSES);

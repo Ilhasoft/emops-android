@@ -152,7 +152,7 @@ public class NotificationListManager {
 
         @Override
         public void onNotificationSelected(Notification notification) {
-            CountryProgramManager.switchToUserCountryProgram();
+            MissionManager.switchToUserMission();
 
             Intent storyViewIntent = new Intent(context.getApplicationContext(), StoryViewActivity.class);
             storyViewIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -183,7 +183,7 @@ public class NotificationListManager {
 
         @Override
         public void onNotificationSelected(Notification notification) {
-            CountryProgramManager.switchToUserCountryProgram();
+            MissionManager.switchToUserMission();
 
             Intent openChatIntent = new Intent(context.getApplicationContext(), ChatRoomActivity.class);
             openChatIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);

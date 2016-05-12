@@ -42,13 +42,13 @@ import java.util.Locale;
 
 import in.ureport.R;
 import in.ureport.loader.NotificationLoader;
-import in.ureport.managers.CountryProgramManager;
+import in.ureport.managers.MissionManager;
 import in.ureport.helpers.ImageLoader;
 import in.ureport.managers.DonationManager;
 import in.ureport.managers.PrototypeManager;
 import in.ureport.helpers.SpinnerColorSwitcher;
 import in.ureport.managers.UserManager;
-import in.ureport.models.CountryProgram;
+import in.ureport.models.Mission;
 import in.ureport.models.Notification;
 import in.ureport.models.User;
 import in.ureport.network.UserServices;
@@ -78,7 +78,7 @@ public abstract class BaseActivity extends AppCompatActivity implements LoaderMa
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        CountryProgramManager.setThemeIfNeeded(this);
+        MissionManager.setThemeIfNeeded(this);
         super.setContentView(R.layout.activity_base);
         setupBaseView();
         loadData();
@@ -212,10 +212,10 @@ public abstract class BaseActivity extends AppCompatActivity implements LoaderMa
             TextView stories = (TextView) menuHeader.findViewById(R.id.stories);
             stories.setText(getString(R.string.profile_stories, getIntegerValue(user.getStories())));
 
-            List<CountryProgram> countryProgramList = new ArrayList<>(CountryProgramManager.getAvailableCountryPrograms());
+            List<Mission> countryProgramList = new ArrayList<>(MissionManager.getAvailableMissions());
 
             countryPrograms = (Spinner) menuHeader.findViewById(R.id.countryPrograms);
-            countryPrograms.setAdapter(getCountryProgramsAdapter(countryProgramList));
+            countryPrograms.setAdapter(getMissionsAdapter(countryProgramList));
             countryPrograms.setTag(R.id.country_program_position, 0);
             countryPrograms.setOnItemSelectedListener(onCountryProgramClickListener);
 
@@ -234,10 +234,10 @@ public abstract class BaseActivity extends AppCompatActivity implements LoaderMa
     }
 
     @NonNull
-    private ArrayAdapter<CountryProgram> getCountryProgramsAdapter(List<CountryProgram> countryPrograms) {
-        countryPrograms.add(0, new CountryProgram("NONE", getString(R.string.switch_country_program)));
+    private ArrayAdapter<Mission> getMissionsAdapter(List<Mission> countryPrograms) {
+        countryPrograms.add(0, new Mission("NONE", getString(R.string.switch_country_program)));
 
-        ArrayAdapter<CountryProgram> adapter = new ArrayAdapter<>(this, R.layout.view_spinner_dropdown_white
+        ArrayAdapter<Mission> adapter = new ArrayAdapter<>(this, R.layout.view_spinner_dropdown_white
                 , countryPrograms);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         return adapter;
@@ -366,8 +366,8 @@ public abstract class BaseActivity extends AppCompatActivity implements LoaderMa
             if(tag != null && !tag.equals(position) && position > 0) {
                 view.setTag(R.id.country_program_position, position);
 
-                CountryProgram countryProgram = (CountryProgram) adapterView.getAdapter().getItem(position);
-                CountryProgramManager.switchCountryProgram(countryProgram);
+                Mission mission = (Mission) adapterView.getAdapter().getItem(position);
+                MissionManager.switchMission(mission);
                 restartActivity();
             }
         }

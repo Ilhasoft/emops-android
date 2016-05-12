@@ -7,7 +7,7 @@ import in.ureport.R;
 import in.ureport.fragments.MediaViewFragment;
 import in.ureport.fragments.NewsViewFragment;
 import in.ureport.fragments.StoryViewFragment;
-import in.ureport.managers.CountryProgramManager;
+import in.ureport.managers.MissionManager;
 import in.ureport.models.News;
 import in.ureport.models.Story;
 import in.ureport.models.User;
@@ -26,7 +26,7 @@ public class StoryViewActivity extends AppCompatActivity implements MediaViewFra
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        CountryProgramManager.setThemeIfNeeded(this);
+        MissionManager.setThemeIfNeeded(this);
         setContentView(R.layout.activity_generic);
 
         Bundle extras = getIntent().getExtras();

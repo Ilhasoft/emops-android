@@ -28,21 +28,16 @@ import in.ureport.helpers.ValueEventListenerAdapter;
 import in.ureport.listener.FloatingActionButtonListener;
 import in.ureport.helpers.RecyclerScrollListener;
 import in.ureport.listener.OnUserStartChattingListener;
-import in.ureport.managers.CountryProgramManager;
 import in.ureport.managers.UserManager;
 import in.ureport.models.News;
 import in.ureport.models.Story;
 import in.ureport.models.User;
 import in.ureport.network.ContributionServices;
-import in.ureport.network.Response;
 import in.ureport.network.StoryServices;
-import in.ureport.network.UreportServices;
 import in.ureport.network.UserServices;
 import in.ureport.helpers.ChildEventListenerAdapter;
 import in.ureport.tasks.ShareNewsTask;
 import in.ureport.views.adapters.StoriesAdapter;
-import retrofit.Callback;
-import retrofit.RetrofitError;
 
 /**
  * Created by johncordeiro on 7/13/15.
@@ -53,7 +48,6 @@ public class StoriesListFragment extends Fragment implements StoriesAdapter.OnSt
     private static final String TAG = "StoriesListFragment";
 
     private static final String EXTRA_USER = "user";
-    private static final String EXTRA_NEWS = "news";
     private static final String EXTRA_PUBLIC_TYPE = "publicType";
 
     private RecyclerView storiesList;
@@ -64,7 +58,6 @@ public class StoriesListFragment extends Fragment implements StoriesAdapter.OnSt
     private LinearLayoutManager layoutManager;
 
     private User user;
-    private ArrayList<News> newsList;
     protected boolean publicType = true;
 
     private OnPublishStoryListener onPublishStoryListener;
@@ -75,11 +68,6 @@ public class StoriesListFragment extends Fragment implements StoriesAdapter.OnSt
     protected StoryServices storyServices;
     protected UserServices userServices;
     protected ContributionServices contributionServices;
-    protected UreportServices ureportServices;
-
-    private boolean loadingNews = false;
-    private int previousPageLoaded = 1;
-    private boolean hasNewsNextPage = false;
 
     public static StoriesListFragment newInstance(User user) {
         StoriesListFragment storiesListFragment = new StoriesListFragment();
@@ -101,7 +89,6 @@ public class StoriesListFragment extends Fragment implements StoriesAdapter.OnSt
     private void getInstanceStateObjects(@Nullable Bundle savedInstanceState) {
         if(savedInstanceState != null) {
             user = savedInstanceState.getParcelable(EXTRA_USER);
-            newsList = savedInstanceState.getParcelableArrayList(EXTRA_NEWS);
             publicType = savedInstanceState.getBoolean(EXTRA_PUBLIC_TYPE);
         }
     }
@@ -133,7 +120,6 @@ public class StoriesListFragment extends Fragment implements StoriesAdapter.OnSt
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putParcelable(EXTRA_USER, user);
-        outState.putParcelableArrayList(EXTRA_NEWS, (ArrayList<News>) storiesAdapter.getNews());
         outState.putBoolean(EXTRA_PUBLIC_TYPE, publicType);
     }
 
@@ -160,26 +146,13 @@ public class StoriesListFragment extends Fragment implements StoriesAdapter.OnSt
         storyServices = new StoryServices();
         userServices = new UserServices();
         contributionServices = new ContributionServices(ContributionServices.Type.Story);
-        String ureportEndpoint = getString(CountryProgramManager.getCurrentCountryProgram().getUreportEndpoint());
-        ureportServices = new UreportServices(ureportEndpoint);
     }
 
     public void loadData() {
         if(publicType) {
-            loadNewsForPage(previousPageLoaded);
             storyServices.addChildEventListener(childEventListener);
         } else {
             storyServices.addChildEventListenerForUser(user, childEventListener);
-        }
-    }
-
-    private void loadNewsForPage(int page) {
-        if(newsList != null) {
-            storiesAdapter.addNews(newsList);
-        } else {
-            loadingNews = true;
-            ureportServices.listNews(CountryProgramManager.getCurrentCountryProgram().getOrganization()
-                    , page, onNewsLoadedCallback);
         }
     }
 
@@ -322,20 +295,6 @@ public class StoriesListFragment extends Fragment implements StoriesAdapter.OnSt
         });
     }
 
-    private Callback<Response<News>> onNewsLoadedCallback = new Callback<Response<News>>() {
-        @Override
-        public void success(Response<News> newsResponse, retrofit.client.Response response) {
-            loadingNews = false;
-            hasNewsNextPage = newsResponse.getNext() != null;
-            storiesAdapter.addNews(newsResponse.getResults());
-        }
-
-        @Override
-        public void failure(RetrofitError error) {
-            Log.e(TAG, "failure ", error);
-        }
-    };
-
     @Override
     public void onNewsViewClick(News news, Pair<View, String>... views) {
         Intent storyViewIntent = new Intent(getActivity(), StoryViewActivity.class);
@@ -351,22 +310,8 @@ public class StoriesListFragment extends Fragment implements StoriesAdapter.OnSt
         public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
             super.onScrolled(recyclerView, dx, dy);
             recyclerFloatingScrollListener.onScrolled(recyclerView, dx, dy);
-            checkNewsPageLoading();
         }
     };
-
-    private void checkNewsPageLoading() {
-        int visibleItemCount = layoutManager.getChildCount();
-        int totalItemCount = layoutManager.getItemCount();
-        int pastVisiblesItems = layoutManager.findFirstVisibleItemPosition();
-
-        if(hasNewsNextPage && !loadingNews) {
-            if((visibleItemCount + pastVisiblesItems) >= totalItemCount) {
-                previousPageLoaded++;
-                loadNewsForPage(previousPageLoaded);
-            }
-        }
-    }
 
     @Override
     public void onShareNews(News news) {

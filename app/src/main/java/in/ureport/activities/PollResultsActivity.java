@@ -7,7 +7,7 @@ import android.support.v7.widget.Toolbar;
 import in.ureport.R;
 import in.ureport.fragments.PollAllResultsFragment;
 import in.ureport.fragments.PollRegionResultsFragment;
-import in.ureport.managers.CountryProgramManager;
+import in.ureport.managers.MissionManager;
 import in.ureport.models.Poll;
 import in.ureport.models.PollResult;
 import in.ureport.views.adapters.PollResultsAdapter;
@@ -22,7 +22,7 @@ public class PollResultsActivity extends AppCompatActivity implements PollResult
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        CountryProgramManager.setThemeIfNeeded(this);
+        MissionManager.setThemeIfNeeded(this);
         setContentView(R.layout.activity_poll_results);
 
         setupView();

@@ -35,15 +35,11 @@ public class ContactBuilder {
 
     @NonNull
     public Contact buildContactWithoutFields(User user) {
-        ContactGroupsBuilder contactGroupsBuilder = new ContactGroupsBuilder();
-        List<String> userGroups = contactGroupsBuilder.getGroupsForUser(user);
-
         List<String> urns = new ArrayList<>();
         urns.add(formatExtUrn(user.getKey()));
 
         Contact contact = new Contact();
         contact.setName(user.getNickname());
-        contact.setGroups(userGroups);
         contact.setUrns(urns);
         return contact;
     }

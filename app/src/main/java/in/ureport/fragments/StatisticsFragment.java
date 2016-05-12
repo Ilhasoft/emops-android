@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import in.ureport.R;
-import in.ureport.managers.CountryProgramManager;
+import in.ureport.managers.MissionManager;
 import in.ureport.models.User;
 
 /**
@@ -62,6 +62,6 @@ public class StatisticsFragment extends Fragment {
         activity.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         TextView countryProgram = (TextView) view.findViewById(R.id.countryProgram);
-        countryProgram.setText(getString(R.string.news_ureporters, CountryProgramManager.getCurrentCountryProgram().getName()));
+        countryProgram.setText(getString(R.string.news_ureporters, MissionManager.getCurrentMission().getName()));
     }
 }

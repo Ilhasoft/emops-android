@@ -22,7 +22,7 @@ import br.com.ilhasoft.support.tool.StatusBarDesigner;
 import in.ureport.R;
 import in.ureport.helpers.AnalyticsHelper;
 import in.ureport.helpers.ToolbarDesigner;
-import in.ureport.managers.CountryProgramManager;
+import in.ureport.managers.MissionManager;
 import in.ureport.managers.FirebaseManager;
 import in.ureport.models.User;
 import in.ureport.models.geonames.CountryInfo;
@@ -145,7 +145,7 @@ public class SignUpFragment extends UserInfoBaseFragment {
         CountryInfo countryInfo = getCountrySelected();
         String countryCode = countryInfo.getIsoAlpha3();
         user.setCountry(countryCode);
-        user.setCountryProgram(CountryProgramManager.getCountryProgramForCode(countryCode).getCode());
+        user.setMission(MissionManager.getGlobalMission().getKey());
 
         UserGender userGender = (UserGender)gender.getAdapter().getItem(gender.getSelectedItemPosition());
         user.setGender(userGender.getGender());

@@ -9,15 +9,13 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
+import in.ureport.R;
 import in.ureport.flowrunner.managers.FlowRunnerManager;
 import in.ureport.flowrunner.models.FlowDefinition;
 import in.ureport.flowrunner.models.FlowRun;
 import in.ureport.helpers.ContactBuilder;
-import in.ureport.managers.CountryProgramManager;
 import in.ureport.managers.UserManager;
 import in.ureport.flowrunner.models.Contact;
-import in.ureport.network.ProxyApi;
-import in.ureport.network.ProxyServices;
 import in.ureport.network.RapidProServices;
 
 /**
@@ -38,9 +36,7 @@ public class LastFlowLoader extends AsyncTaskLoader<FlowDefinition> {
     @Override
     public FlowDefinition loadInBackground() {
         try {
-            loadCountryTokenIfNeeded();
-            String rapidproEndpoint = getContext().getString(CountryProgramManager
-                    .getCurrentCountryProgram().getRapidproEndpoint());
+            String rapidproEndpoint = getContext().getString(R.string.rapidpro_host_address1);
             this.rapidProServices = new RapidProServices(rapidproEndpoint);
 
             Contact contact = loadContact();
@@ -70,14 +66,6 @@ public class LastFlowLoader extends AsyncTaskLoader<FlowDefinition> {
         cancelLoad();
     }
 
-    private void loadCountryTokenIfNeeded() {
-        if(!UserManager.isCountryTokenValid()) {
-            ProxyServices proxyServices = new ProxyServices(getContext());
-            ProxyApi.Response response = proxyServices.getAuthenticationTokenByCountry(UserManager.getCountryCode());
-            UserManager.updateCountryToken(response.token);
-        }
-    }
-
     @NonNull
     private Date getMinimumDate() {
         Calendar calendar = Calendar.getInstance();
@@ -87,7 +75,8 @@ public class LastFlowLoader extends AsyncTaskLoader<FlowDefinition> {
 
     private Contact loadContact() {
         ContactBuilder contactBuilder = new ContactBuilder();
-        Contact contact = rapidProServices.loadContact(getApiToken(), contactBuilder.formatExtUrn(UserManager.getUserId()));
+        Contact contact = rapidProServices.loadContact(getApiToken()
+                , contactBuilder.formatExtUrn(UserManager.getUserId()));
 
         if(!UserManager.isUserRapidUuidValid())
             UserManager.updateUserRapidUuid(contact.getUuid());
@@ -97,7 +86,7 @@ public class LastFlowLoader extends AsyncTaskLoader<FlowDefinition> {
 
     @NonNull
     private String getApiToken() {
-        return UserManager.getCountryToken();
+        return getContext().getString(R.string.rapidpro_token);
     }
 
 }

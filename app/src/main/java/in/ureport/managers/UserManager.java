@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
 import android.util.Log;
 
@@ -16,6 +15,7 @@ import in.ureport.activities.MainActivity;
 import in.ureport.helpers.ValueEventListenerAdapter;
 import in.ureport.listener.OnUserLoadedListener;
 import in.ureport.models.ChatRoom;
+import in.ureport.models.Mission;
 import in.ureport.models.User;
 import in.ureport.network.ChatRoomServices;
 import in.ureport.network.UserServices;
@@ -31,8 +31,8 @@ public class UserManager {
     private static String userId = null;
     private static String userRapidUuid = null;
     private static String userLanguage = null;
-    private static String countryCode = null;
-    private static String countryToken = null;
+    private static String missionKey = null;
+    private static String missionName = null;
     private static Boolean master = false;
     private static Boolean moderator = false;
 
@@ -45,30 +45,32 @@ public class UserManager {
         userId = systemPreferences.getUserLoggedId();
         userRapidUuid = systemPreferences.getUserLoggedRapidUuid();
         userLanguage = systemPreferences.getUserLanguage();
-        countryCode = systemPreferences.getCountryCode();
-        countryToken = systemPreferences.getCountryToken();
+        missionKey = systemPreferences.getMissionKey();
+        missionName = systemPreferences.getMissionName();
         master = systemPreferences.isMaster();
         moderator = systemPreferences.isModerator();
 
-        CountryProgramManager.switchCountryProgram(UserManager.getCountryCode());
+        MissionManager.switchMission(new Mission(missionKey, missionName));
     }
 
     public static boolean isUserCountryProgramEnabled() {
-        Log.i(TAG, "isUserCountryProgramEnabled getCountryCode: " + getCountryCode());
-        return getCountryCode() != null
-            && getCountryCode().equals(CountryProgramManager.getCurrentCountryProgram().getCode());
+        Log.i(TAG, "isUserCountryProgramEnabled getMission: " + getMission());
+        return getMission() != null
+            && getMission().equals(MissionManager.getCurrentMission().getKey());
     }
 
     public static void updateUserInfo(User user, final OnUserLoadedListener listener) {
         final UserServices userServices = new UserServices();
         userServices.keepUserOffline(user);
 
-        UserManager.countryCode = user.getCountryProgram();
-
-        CountryProgramManager.switchCountryProgram(countryCode);
+        Mission currentMission = MissionManager.getMissionForCode(user.getMission());
+        UserManager.missionKey = currentMission.getKey();
+        UserManager.missionName = currentMission.getName();
+        MissionManager.switchMission(missionKey);
 
         SystemPreferences systemPreferences = new SystemPreferences(context);
-        systemPreferences.setCountryCode(countryCode);
+        systemPreferences.setMissionKey(missionKey);
+        systemPreferences.setMissionName(missionName);
 
         checkUserModeratorPermission(user, listener);
     }
@@ -139,23 +141,8 @@ public class UserManager {
         return userRapidUuid;
     }
 
-    public static void updateCountryToken(String countryToken) {
-        UserManager.countryToken = countryToken;
-
-        SystemPreferences systemPreferences = new SystemPreferences(context);
-        systemPreferences.setCountryToken(countryToken != null ? countryToken : "");
-    }
-
-    public static String getCountryToken() {
-        return countryToken;
-    }
-
-    public static boolean isCountryTokenValid() {
-        return countryToken != null && !countryToken.isEmpty();
-    }
-
-    public static String getCountryCode() {
-        return countryCode;
+    public static String getMission() {
+        return missionKey;
     }
 
     public static Boolean canModerate() {
@@ -202,7 +189,7 @@ public class UserManager {
     }
 
     public static boolean isCountryCodeValid() {
-        return countryCode != null && !countryCode.isEmpty();
+        return missionKey != null && !missionKey.isEmpty();
     }
 
     public static void leaveFromGroup(final Activity activity, final ChatRoom chatRoom) {
@@ -216,7 +203,7 @@ public class UserManager {
                 .setPositiveButton(R.string.confirm_neutral_dialog_button, (dialogInterface, i) -> {
                     User user = new User();
                     user.setKey(getUserId());
-                    user.setCountryProgram(UserManager.getCountryCode());
+                    user.setMission(UserManager.getMission());
 
                     ChatRoomServices chatRoomServices = new ChatRoomServices();
                     chatRoomServices.removeChatMember(activity, user, chatRoom.getKey());
@@ -229,16 +216,15 @@ public class UserManager {
     public static void logout(Context context) {
         UserManager.userId = null;
         UserManager.userRapidUuid = null;
-        UserManager.countryCode = null;
-        UserManager.countryToken = null;
+        UserManager.missionKey = null;
 
         FirebaseManager.logout();
 
         SystemPreferences systemPreferences = new SystemPreferences(context);
         systemPreferences.setUserLoggedId(SystemPreferences.USER_NO_LOGGED_ID);
         systemPreferences.setUserLoggedRapidUuid(SystemPreferences.USER_NO_LOGGED_ID);
-        systemPreferences.setCountryCode("");
-        systemPreferences.setCountryToken("");
+        systemPreferences.setMissionKey("");
+        systemPreferences.setMissionName("");
     }
 
     public static void startLoginFlow(Context context) {
@@ -249,8 +235,8 @@ public class UserManager {
     }
 
     private static boolean isUserCountryProgram() {
-        return countryCode == null || countryCode.length() == 0
-        || CountryProgramManager.getCurrentCountryProgram().equals(CountryProgramManager.getCountryProgramForCode(countryCode));
+        return missionKey == null || missionKey.length() == 0
+        || MissionManager.getCurrentMission().equals(MissionManager.getMissionForCode(missionKey));
     }
 
     private static void showCountryProgramAlert(Context context) {

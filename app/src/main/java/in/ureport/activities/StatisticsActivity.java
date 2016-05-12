@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 
 import in.ureport.R;
 import in.ureport.fragments.StatisticsFragment;
-import in.ureport.managers.CountryProgramManager;
+import in.ureport.managers.MissionManager;
 import in.ureport.models.User;
 
 /**
@@ -18,7 +18,7 @@ public class StatisticsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        CountryProgramManager.setThemeIfNeeded(this);
+        MissionManager.setThemeIfNeeded(this);
         setContentView(R.layout.activity_generic);
 
         Bundle extras = getIntent().getExtras();

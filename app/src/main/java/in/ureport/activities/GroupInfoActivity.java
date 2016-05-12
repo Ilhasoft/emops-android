@@ -12,7 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 import in.ureport.R;
 import in.ureport.fragments.GroupInfoFragment;
 import in.ureport.listener.InfoGroupChatListener;
-import in.ureport.managers.CountryProgramManager;
+import in.ureport.managers.MissionManager;
 import in.ureport.managers.UserManager;
 import in.ureport.models.ChatMembers;
 import in.ureport.models.ChatRoom;
@@ -33,7 +33,7 @@ public class GroupInfoActivity extends AppCompatActivity implements InfoGroupCha
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        CountryProgramManager.setThemeIfNeeded(this);
+        MissionManager.setThemeIfNeeded(this);
         setContentView(R.layout.activity_generic);
         setResult(Activity.RESULT_CANCELED);
 

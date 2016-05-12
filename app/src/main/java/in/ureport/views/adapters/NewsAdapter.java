@@ -11,7 +11,7 @@ import android.widget.TextView;
 import java.util.List;
 
 import in.ureport.R;
-import in.ureport.managers.CountryProgramManager;
+import in.ureport.managers.MissionManager;
 import in.ureport.managers.PrototypeManager;
 import in.ureport.models.News;
 import in.ureport.models.User;
@@ -88,7 +88,7 @@ public class NewsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
         private void bindView() {
             if(user != null) {
-                countryProgram.setText(CountryProgramManager.getCurrentCountryProgram().getName());
+                countryProgram.setText(MissionManager.getCurrentMission().getName());
             }
         }
     }

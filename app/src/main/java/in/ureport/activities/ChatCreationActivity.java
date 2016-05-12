@@ -8,14 +8,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import in.ureport.R;
 import in.ureport.fragments.CreateGroupFragment;
 import in.ureport.fragments.NewChatFragment;
 import in.ureport.listener.ChatRoomInterface;
 import in.ureport.listener.OnCreateGroupListener;
-import in.ureport.managers.CountryProgramManager;
+import in.ureport.managers.MissionManager;
 import in.ureport.models.ChatMembers;
 import in.ureport.models.ChatRoom;
 import in.ureport.models.GroupChatRoom;
@@ -37,7 +36,7 @@ public class ChatCreationActivity extends AppCompatActivity implements ChatRoomI
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        CountryProgramManager.setThemeIfNeeded(this);
+        MissionManager.setThemeIfNeeded(this);
         setContentView(R.layout.activity_new_chat);
         setupView();
         setResult(Activity.RESULT_CANCELED);
