@@ -23,7 +23,7 @@
   <string name="error_valid_email">Escribir una dirección de correo válida</string>
   <string name="label_home">Principal</string>
   <string name="load_message_wait">Espera...</string>
-  <string name="main_stories">Historias</string>
+  <string name="main_stories">Informes</string>
   <string name="main_polls">Encuestas</string>
   <string name="main_news_feed">Programar noticias</string>
   <string name="main_menu_home">Principal</string>
@@ -140,7 +140,7 @@ Juntxs, lxs U-Reporters pueden crear cambios positivos internacionalmente, en su
   <string name="points_earning_ranking">ir a ranking</string>
   <string name="points_earning_close">Cerrar</string>
   <string name="polls_previous_title">Encuesta previa</string>
-  <string name="switch_country_program">Cambiar de país</string>
+  <string name="switch_country_program">Cambiar de misión</string>
   <string name="about_title">Acerca de U-Report</string>
   <string name="label_unicef_ambassadors">Embajadores de UNICEF</string>
   <string name="ambassadors_content">
@@ -247,7 +247,7 @@ Las celebridades de UNICEF tienen una amplia gama de talentos y logros, pero tod
   <string name="title_share_news">Comparte noticias usando:</string>
   <string name="title_share_subject">Historia compartida usando U-Report</string>
   <string name="story_share_info">Descarga la App de U-Report: http://goo.gl/Xxyodt</string>
-  <string name="label_country_moderator">Moderadores de país</string>
+  <string name="label_country_moderator">Moderadores</string>
   <string name="message_success_user_update">Usuario actualizado exitosamente</string>
   <string-array name="spinner_loading">
     <item>Cargando...</item>

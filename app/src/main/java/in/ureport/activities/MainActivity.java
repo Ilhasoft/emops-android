@@ -10,14 +10,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
-import com.firebase.client.DataSnapshot;
-
 import java.util.List;
 
 import in.ureport.R;
 import in.ureport.fragments.PollsFragment;
 import in.ureport.fragments.StoriesListFragment;
-import in.ureport.helpers.ValueEventListenerAdapter;
 import in.ureport.listener.OnSeeOpenGroupsListener;
 import in.ureport.listener.OnUserStartChattingListener;
 import in.ureport.managers.MissionManager;
@@ -29,7 +26,6 @@ import in.ureport.models.Story;
 import in.ureport.models.User;
 import in.ureport.models.Notification;
 import in.ureport.models.holders.NavigationItem;
-import in.ureport.network.UserServices;
 import in.ureport.pref.SystemPreferences;
 import in.ureport.views.adapters.NavigationAdapter;
 

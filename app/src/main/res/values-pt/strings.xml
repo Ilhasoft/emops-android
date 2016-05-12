@@ -23,7 +23,7 @@
   <string name="error_valid_email">Insira um e-mail válido</string>
   <string name="label_home">Principal</string>
   <string name="load_message_wait">Aguarde...</string>
-  <string name="main_stories">Histórias</string>
+  <string name="main_stories">Relatos</string>
   <string name="main_polls">Enquetes</string>
   <string name="main_news_feed">Notícias</string>
   <string name="main_menu_home">Principal</string>
@@ -143,7 +143,7 @@ U-Report é uma ferramenta grátis para participação da comunidade, modelada p
   <string name="points_earning_ranking">Ir para o Ranking</string>
   <string name="points_earning_close">Fechar</string>
   <string name="polls_previous_title">Enquetes anteriores</string>
-  <string name="switch_country_program">Mudar País</string>
+  <string name="switch_country_program">Mudar Missão</string>
   <string name="about_title">Sobre o U-Report</string>
   <string name="label_unicef_ambassadors">Embaixadores da Unicef</string>
   <string name="ambassadors_content">O que significa um cantor, um ator ou um atleta representar a UNICEF? E quais boas ações as celebridades podem realmente fazer?\n\n
@@ -250,7 +250,7 @@ Celebridades da UNICEF tem uma grande quantidade de talentos e conquistas, mas e
   <string name="title_share_news">Compartilhe notícia usando:</string>
   <string name="title_share_subject">História compartilhada usando U-Report</string>
   <string name="story_share_info">Download U-Report: http://goo.gl/Xxyodt</string>
-  <string name="label_country_moderator">Moderadores de País</string>
+  <string name="label_country_moderator">Moderadores</string>
   <string name="message_success_user_update">Usuário foi atualizado com sucesso!</string>
   <string-array name="spinner_loading">
     <item>Carregando...</item>

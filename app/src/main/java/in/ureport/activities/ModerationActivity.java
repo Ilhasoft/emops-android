@@ -6,6 +6,7 @@ import android.support.annotation.NonNull;
 import android.support.v4.view.ViewPager;
 
 import in.ureport.R;
+import in.ureport.fragments.MissionsFragment;
 import in.ureport.fragments.SelectModeratorsFragment;
 import in.ureport.fragments.StoriesModerationFragment;
 import in.ureport.listener.OnUserStartChattingListener;
@@ -69,15 +70,17 @@ public class ModerationActivity extends BaseActivity implements OnUserStartChatt
     @NonNull
     private NavigationItem[] getNavigationItems() {
         NavigationItem storiesModeration = new NavigationItem(new StoriesModerationFragment()
-                , getString(R.string.stories_moderation));
+                , getString(R.string.main_stories));
         NavigationItem selectModerators = new NavigationItem(new SelectModeratorsFragment()
                 , getString(R.string.label_country_moderator));
+        NavigationItem missions = new NavigationItem(new MissionsFragment()
+                , getString(R.string.label_missions));
 
         NavigationItem [] navigationItems;
         if(UserManager.isMaster()) {
-            navigationItems = new NavigationItem[]{storiesModeration, selectModerators};
+            navigationItems = new NavigationItem[]{missions, storiesModeration, selectModerators};
         } else {
-            navigationItems = new NavigationItem[]{storiesModeration};
+            navigationItems = new NavigationItem[]{missions, storiesModeration};
         }
         return navigationItems;
     }

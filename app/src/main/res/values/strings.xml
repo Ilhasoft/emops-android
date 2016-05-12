@@ -28,7 +28,7 @@
     <string name="error_valid_email">Set a valid e-mail</string>
     <string name="label_home">Main</string>
     <string name="load_message_wait">Wait...</string>
-    <string name="main_stories">Stories</string>
+    <string name="main_stories">Reports</string>
     <string name="main_polls">Polls</string>
     <string name="main_news_feed">Program News</string>
     <string name="main_menu_home">Main</string>
@@ -145,7 +145,7 @@
     <string name="points_earning_ranking">Go to Ranking</string>
     <string name="points_earning_close">Close</string>
     <string name="polls_previous_title">Previous polls</string>
-    <string name="switch_country_program">Switch Country Program</string>
+    <string name="switch_country_program">Switch Mission</string>
     <string name="about_title">About U-Report</string>
     <string name="label_unicef_ambassadors">Unicef Ambassadors</string>
     <string name="ambassadors_content">
@@ -257,7 +257,7 @@
     <string name="title_share_news">Share news using:</string>
     <string name="title_share_subject">Story shared using U-Report</string>
     <string name="story_share_info">Download U-Report app: http://goo.gl/Xxyodt</string>
-    <string name="label_country_moderator">Country Moderators</string>
+    <string name="label_country_moderator">Moderators</string>
     <string name="message_success_user_update">User was updated with success!</string>
 
     <string-array name="spinner_loading">
@@ -348,6 +348,13 @@
     <string name="title_comment">Comment</string>
     <string name="title_comment_poll">Be the first to comment this poll</string>
     <string name="poll_comment">Add a comment</string>
+    <string name="label_missions">Missions</string>
+    <string name="hint_mission_name">Enter the mission name</string>
+    <string name="message_message_information">Insert the mission information</string>
+    <string name="hint_mission_code">Enter the mission code</string>
+    <string name="error_message_mission_required">Minimum of 4 characters required</string>
+    <string name="message_remove_mission_confirmation">Do you really want to remove this mission?</string>
+    <string name="error_message_remove_global">You can\'t update the global mission!</string>
 
     <plurals name="files_attached">
         <item quantity="one">%1$s file attached</item>

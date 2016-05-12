@@ -23,7 +23,7 @@
   <string name="error_valid_email">Встановити дійсну адресу електронної пошти</string>
   <string name="label_home">Головний</string>
   <string name="load_message_wait">Зачекайте...</string>
-  <string name="main_stories">Історії</string>
+  <string name="main_stories">Звіти</string>
   <string name="main_polls">Опитування</string>
   <string name="main_news_feed">Новини</string>
   <string name="main_menu_home">Головний</string>
@@ -140,7 +140,7 @@
   <string name="points_earning_ranking">Перейти до Ранжування</string>
   <string name="points_earning_close">Закрити</string>
   <string name="polls_previous_title">Попередні опитування</string>
-  <string name="switch_country_program">Змінити країну програми</string>
+  <string name="switch_country_program">зміна місії</string>
   <string name="about_title">Про U-Report</string>
   <string name="label_unicef_ambassadors">Посли Доброї волі ЮНІСЕФ</string>
   <string name="ambassadors_content">Які музиканти, актори та спортсмени можуть представляти ЮНІСЕФ? І що корисного можуть зробити відомі люди?
@@ -239,7 +239,7 @@
   <string name="title_share_news">Новини надані:</string>
   <string name="title_share_subject">Історія надана Ю-Репорт</string>
   <string name="story_share_info">Завантажити додаток U-Report: http://goo.gl/Xxyodt</string>
-  <string name="label_country_moderator">Країна модератор</string>
+  <string name="label_country_moderator">модератор</string>
   <string name="message_success_user_update">Користувач був оновлений успішно!</string>
   <string-array name="spinner_loading"/>
   <string-array name="spinner_error_loading_states"/>
