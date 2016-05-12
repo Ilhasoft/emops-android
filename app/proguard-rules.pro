@@ -171,3 +171,7 @@
 -dontwarn com.amazonaws.services.sqs.**
 
 -dontnote com.amazonaws.services.sqs.QueueUrlHandler
+
+#Firebase UI
+-keep class in.ureport.views.holders.** { *; }
+-dontwarn com.firebase.ui.**
