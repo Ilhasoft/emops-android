@@ -58,8 +58,8 @@
   <string name="polls_response_rate">%1$s%% taxa de resposta</string>
   <string name="polls_see_results">Veja os resultados</string>
   <string name="news_more_statistics">Mais estatísticas</string>
-  <string name="news_ureporters">U-Reporters</string>
-  <string name="news_statistics_global_ureporters">U-Reporters Globais</string>
+  <string name="news_ureporters">E-Reporters</string>
+  <string name="news_statistics_global_ureporters">E-Reporters Globais</string>
   <string name="news_statistics_gender_rate">Taxa por Gênero</string>
   <string name="news_statistics_most_active">4 regiões mais ativas</string>
   <string name="news_statistics_age_rate">Taxa por idade</string>
@@ -90,17 +90,17 @@
   <string name="chat_invite">Convidar</string>
   <string name="label_new_chat">Novo chat</string>
   <string name="chat_create_group_title">Crie um Grupo</string>
-  <string name="chat_ureporters">U-Reporters</string>
+  <string name="chat_ureporters">E-Reporters</string>
   <string name="chat_group_title_hint">Título do grupo</string>
   <string name="chat_private_group_title">Grupo privado</string>
-  <string name="chat_new_invite_ureporters">Buscar U-Reporters</string>
-  <string name="chat_new_invite_ureporters_count">%1$s u-reporters</string>
+  <string name="chat_new_invite_ureporters">Buscar E-Reporters</string>
+  <string name="chat_new_invite_ureporters_count">%1$s e-reporters</string>
   <string name="label_save">Salvar</string>
   <string name="chat_create_result_title">Sucesso!</string>
   <string name="chat_create_group_result_message">O grupo foi criado com sucesso!</string>
   <string name="chat_group_description_hint">Descrição</string>
   <string name="label_create_group">Criar grupo</string>
-  <string name="chat_create_individual_message">Você quer criar uma nova sala de chat com esse U-Reporter?</string>
+  <string name="chat_create_individual_message">Você quer criar uma nova sala de chat com esse E-Reporter?</string>
   <string name="error_chat_create_individual">Você já possui uma sala de chat com este usuário. Não é possível duplicá-la.</string>
   <string name="cancel_dialog_button">Cancelar</string>
   <string name="label_action_notifications">Notificações</string>
@@ -128,7 +128,7 @@
   <string name="list_stories_header_title">Oi %1$s, nos diga o que está acontecendo</string>
   <string name="main_menu_group_institutional">Institucional</string>
   <string name="label_settings">Configurações</string>
-  <string name="group_info_add_ureporter">Adicionar U-Reporter</string>
+  <string name="group_info_add_ureporter">Adicionar E-Reporter</string>
   <string name="label_group_information">Informação</string>
   <string name="country_program_validation_error">Você não pode fazer essa ação nesse país!</string>
   <string name="label_group_edit">Editar grupo</string>
@@ -180,7 +180,7 @@ Celebridades da UNICEF tem uma grande quantidade de talentos e conquistas, mas e
   <!--TODO: Remove or change this placeholder text-->
   <string name="load_message_save_user">Salvando usuário...</string>
   <string name="error_no_internet">Por favor, conecte-se à internet antes de continuar</string>
-  <string name="invite_contact_text">Converse comigo no aplicativo U-Report! Faça o download ele aqui http://goo.gl/Xxyodt</string>
+  <string name="invite_contact_text">Converse comigo no aplicativo E-Report! Faça o download ele aqui http://goo.gl/Xxyodt</string>
   <string name="ureporters_selected_maximum">O número máximo de usuários selecionados são %1$s</string>
   <string name="chat_private_media_permission_title">Mídia habilitada</string>
   <string name="search_title">Buscar</string>
@@ -195,7 +195,7 @@ Celebridades da UNICEF tem uma grande quantidade de talentos e conquistas, mas e
   <string name="error_choose_district">Escolha um distrito</string>
   <string name="error_rapidpro">Aconteceu um erro durante o processo de registro. Tente novamente mais tarde.</string>
   <string name="load_message_user_data">Carregando dados do usuário...</string>
-  <string name="summary_notification">U-Report</string>
+  <string name="summary_notification">E-Report</string>
   <string name="hint_search_groups">Procurar grupos</string>
   <string name="hint_search_chat_rooms">Buscar salas de chat</string>
   <string name="label_close_group">Fechar Grupo</string>
@@ -223,10 +223,10 @@ Celebridades da UNICEF tem uma grande quantidade de talentos e conquistas, mas e
   <string name="poll_question_latest_results">Resultados de enquetes anteriores</string>
   <string name="view_title">Visualizar</string>
   <string name="poll_response_hint">Aperte aqui para responder</string>
-  <string name="poll_question_default_message">Espere pela próxima enquete ou envia uma mensagem para o U-Report abaixo</string>
+  <string name="poll_question_default_message">Espere pela próxima enquete ou envia uma mensagem para o E-Report abaixo</string>
   <string name="main_chat">Chat</string>
   <string name="title_open_groups">Seguir Grupos</string>
-  <string name="description_open_groups">Veja o que as comunidades do U-Report estão falando</string>
+  <string name="description_open_groups">Veja o que as comunidades do E-Report estão falando</string>
   <string name="title_see">Veja</string>
   <string name="label_invite_contacts">Convidar contatos</string>
   <string name="title_poll_question_no_login">Você precisa fazer o login para responder enquetes</string>
@@ -238,14 +238,14 @@ Celebridades da UNICEF tem uma grande quantidade de talentos e conquistas, mas e
   <string name="button_title_disapprove">Rejeitar</string>
   <string name="button_title_publish">Publicar</string>
   <string name="success_story_update_message">História atualizada com sucesso!</string>
-  <string name="message_story_publish_warning">Sua história foi enviada para o time do U-Report. Verifique depois e veja se foi publicada!</string>
+  <string name="message_story_publish_warning">Sua história foi enviada para o time do E-Report. Verifique depois e veja se foi publicada!</string>
   <string name="label_remove">Remover</string>
   <string name="error_remove">Ocorreu um erro durante o processo de remoção</string>
   <string name="message_success_remove">Os dados foram removidos com sucesso!</string>
   <string name="title_share_story">Compartilhe história usando:</string>
   <string name="title_share_news">Compartilhe notícia usando:</string>
-  <string name="title_share_subject">História compartilhada usando U-Report</string>
-  <string name="story_share_info">Download U-Report: http://goo.gl/Xxyodt</string>
+  <string name="title_share_subject">História compartilhada usando E-Report</string>
+  <string name="story_share_info">Download E-Report: http://goo.gl/Xxyodt</string>
   <string name="label_country_moderator">Moderadores</string>
   <string name="message_success_user_update">Usuário foi atualizado com sucesso!</string>
   <string-array name="spinner_loading">
@@ -265,7 +265,7 @@ Celebridades da UNICEF tem uma grande quantidade de talentos e conquistas, mas e
   <string-array name="chat_message_items">
     <item>Remover mensagem</item>
   </string-array>
-  <string name="ureport_message_title">Mensagem do U-Report</string>
+  <string name="ureport_message_title">Mensagem do E-Report</string>
   <string name="message_remove_chat_message">Você realmente quer deletar essa mensagem?</string>
   <string name="message_delete_message_success">Sua mensagem foi deletada com sucesso!</string>
   <string name="message_individual_chat_blocked">Essa sala de chat foi bloqueada por %1$s</string>
@@ -283,7 +283,7 @@ Celebridades da UNICEF tem uma grande quantidade de talentos e conquistas, mas e
   <string name="label_chat_picture_notification">picture</string>
   <string name="get_started_title">Começar</string>
   <string name="ureport_contribution_notification_title">Nova contribuição na história</string>
-  <string name="title_tutorial">Uma vez que você registra e se torna um U-Reporter você pode:</string>
+  <string name="title_tutorial">Uma vez que você registra e se torna um E-Reporter você pode:</string>
   <string name="message_send_poll">Enviar resposta da enquete...</string>
   <string name="message_response_sent">Resposta enviada com sucesso!</string>
   <string name="message_question_profile_picture">Você quer mudar sua foto de perfil?</string>

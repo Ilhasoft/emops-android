@@ -172,7 +172,7 @@
   <!--TODO: Remove or change this placeholder text-->
   <string name="load_message_save_user">Збереження профілю...</string>
   <string name="error_no_internet">Будь ласка, підключіться до Інтернету.</string>
-  <string name="invite_contact_text">Давай спілкуватись у додатку U-Report. Завантажуй тут http://goo.gl/Xxyodt</string>
+  <string name="invite_contact_text">Давай спілкуватись у додатку E-Report. Завантажуй тут http://goo.gl/Xxyodt</string>
   <string name="ureporters_selected_maximum">Максимальна кількість обраних користувачів, складає %1$s</string>
   <string name="chat_private_media_permission_title">Медіа дозволено</string>
   <string name="search_title">Пошук</string>
@@ -187,7 +187,7 @@
   <string name="error_choose_district">Виберіть район!</string>
   <string name="error_rapidpro">Сталася помилка під час процесу реєстрації. Спробуйте ще раз пізніше.</string>
   <string name="load_message_user_data">Завантаження даних користувача...</string>
-  <string name="summary_notification">U-Report</string>
+  <string name="summary_notification">E-Report</string>
   <string name="hint_search_groups">Пошук групи</string>
   <string name="hint_search_chat_rooms">Пошук чату</string>
   <string name="label_close_group">Закрита група</string>
@@ -215,7 +215,7 @@
   <string name="poll_question_latest_results">Попередні результати опитування</string>
   <string name="view_title">Вид</string>
   <string name="poll_response_hint">Натисніть тут, щоб відповісти</string>
-  <string name="poll_question_default_message">Чекайте наступного опитування або надішліть повідомлення для U-Report нижче</string>
+  <string name="poll_question_default_message">Чекайте наступного опитування або надішліть повідомлення для E-Report нижче</string>
   <string name="main_chat">Чат</string>
   <string name="title_open_groups">Приєднуйтесь до груп</string>
   <string name="description_open_groups">Дивитись, що Ю-Репорт спільнота обговорює</string>
@@ -237,7 +237,7 @@
   <string name="title_share_story">Історія надана:</string>
   <string name="title_share_news">Новини надані:</string>
   <string name="title_share_subject">Історія надана Ю-Репорт</string>
-  <string name="story_share_info">Завантажити додаток U-Report: http://goo.gl/Xxyodt</string>
+  <string name="story_share_info">Завантажити додаток E-Report: http://goo.gl/Xxyodt</string>
   <string name="label_country_moderator">модератор</string>
   <string name="message_success_user_update">Користувач був оновлений успішно!</string>
   <string-array name="spinner_loading"/>

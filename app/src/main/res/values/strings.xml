@@ -63,8 +63,8 @@
     <string name="polls_response_rate">%1$s%% response rate</string>
     <string name="polls_see_results">See results</string>
     <string name="news_more_statistics">More statistics</string>
-    <string name="news_ureporters">U-Reporters</string>
-    <string name="news_statistics_global_ureporters">Global U-reporters</string>
+    <string name="news_ureporters">E-Reporters</string>
+    <string name="news_statistics_global_ureporters">Global E-reporters</string>
     <string name="news_statistics_gender_rate">Rate by Gender</string>
     <string name="news_statistics_most_active">4 most active regions</string>
     <string name="news_statistics_age_rate">Rate by Age</string>
@@ -95,17 +95,17 @@
     <string name="chat_invite">Invite</string>
     <string name="label_new_chat">New chat</string>
     <string name="chat_create_group_title">Create a Group</string>
-    <string name="chat_ureporters">U-Reporters</string>
+    <string name="chat_ureporters">E-Reporters</string>
     <string name="chat_group_title_hint">Group title</string>
     <string name="chat_private_group_title">Private group</string>
-    <string name="chat_new_invite_ureporters">Search U-Reporters</string>
-    <string name="chat_new_invite_ureporters_count">%1$s u-reporters</string>
+    <string name="chat_new_invite_ureporters">Search E-Reporters</string>
+    <string name="chat_new_invite_ureporters_count">%1$s e-reporters</string>
     <string name="label_save">Save</string>
     <string name="chat_create_result_title">Success!</string>
     <string name="chat_create_group_result_message">The group was created with success!</string>
     <string name="chat_group_description_hint">Description</string>
     <string name="label_create_group">Create group</string>
-    <string name="chat_create_individual_message">Do you want to create a new chat room with this u-reporter?</string>
+    <string name="chat_create_individual_message">Do you want to create a new chat room with this e-reporter?</string>
     <string name="error_chat_create_individual">You already have a chat room with this user. It\'s not possible to duplicate.</string>
     <string name="cancel_dialog_button">Cancel</string>
     <string name="label_action_notifications">Notifications</string>
@@ -133,7 +133,7 @@
     <string name="list_stories_header_title">Hi %1$s, tell us what\'s going on</string>
     <string name="main_menu_group_institutional">Institutional</string>
     <string name="label_settings">Settings</string>
-    <string name="group_info_add_ureporter">Add U-Reporter</string>
+    <string name="group_info_add_ureporter">Add E-Reporter</string>
     <string name="label_group_information">Information</string>
     <string name="country_program_validation_error">You can\'t do this action for this country program!</string>
     <string name="label_group_edit">Edit group</string>
@@ -190,7 +190,7 @@
 <!-- TODO: Remove or change this placeholder text -->
     <string name="load_message_save_user">Saving user...</string>
     <string name="error_no_internet">Please connect to an internet connection before you continue.</string>
-    <string name="invite_contact_text">Chat with me on U-Report app! Download it here http://goo.gl/Xxyodt</string>
+    <string name="invite_contact_text">Chat with me on E-Report app! Download it here http://goo.gl/Xxyodt</string>
     <string name="ureporters_selected_maximum">The maximum number of users selected are %1$s</string>
     <string name="chat_private_media_permission_title">Media allowed</string>
     <string name="search_title">Search</string>
@@ -205,7 +205,7 @@
     <string name="error_choose_district">Choose the district!</string>
     <string name="error_rapidpro">An error occured during the registration process. Try again later.</string>
     <string name="load_message_user_data">Loading user data...</string>
-    <string name="summary_notification">U-Report</string>
+    <string name="summary_notification">E-Report</string>
     <string name="hint_search_groups">Search groups</string>
     <string name="hint_search_chat_rooms">Search chat rooms</string>
     <string name="label_close_group">Close Group</string>
@@ -233,10 +233,10 @@
     <string name="poll_question_latest_results">Previous poll results</string>
     <string name="view_title">View</string>
     <string name="poll_response_hint">Tap here to answer</string>
-    <string name="poll_question_default_message">Wait for the next poll or send a message to U-Report below</string>
+    <string name="poll_question_default_message">Wait for the next poll or send a message to E-Report below</string>
     <string name="main_chat">Chat</string>
     <string name="title_open_groups">Follow Groups</string>
-    <string name="description_open_groups">See what U-Report communities are talking about</string>
+    <string name="description_open_groups">See what E-Report communities are talking about</string>
     <string name="title_see">See</string>
     <string name="label_invite_contacts">Invite contacts</string>
     <string name="title_poll_question_no_login">You need to login to answer polls</string>
@@ -248,14 +248,14 @@
     <string name="button_title_disapprove">Reject</string>
     <string name="button_title_publish">Publish</string>
     <string name="success_story_update_message">Story was updated with success!</string>
-    <string name="message_story_publish_warning">Your story has been submitted to the U-Report team. Check back soon to see it published!</string>
+    <string name="message_story_publish_warning">Your story has been submitted to the E-Report team. Check back soon to see it published!</string>
     <string name="label_remove">Remove</string>
     <string name="error_remove">An error occurred during removing process</string>
     <string name="message_success_remove">The data was removed with success!</string>
     <string name="title_share_story">Share story using:</string>
     <string name="title_share_news">Share news using:</string>
-    <string name="title_share_subject">Story shared using U-Report</string>
-    <string name="story_share_info">Download U-Report app: http://goo.gl/Xxyodt</string>
+    <string name="title_share_subject">Story shared using E-Report</string>
+    <string name="story_share_info">Download E-Report app: http://goo.gl/Xxyodt</string>
     <string name="label_country_moderator">Moderators</string>
     <string name="message_success_user_update">User was updated with success!</string>
 
@@ -281,7 +281,7 @@
         <item>Remove message</item>
     </string-array>
 
-    <string name="ureport_message_title">U-Report message</string>
+    <string name="ureport_message_title">E-Report message</string>
 
     <string name="message_remove_chat_message">Do you really want to delete this message?</string>
     <string name="message_delete_message_success">Your message was deleted with success!</string>
@@ -300,7 +300,7 @@
     <string name="label_chat_picture_notification">picture</string>
     <string name="get_started_title">Get started</string>
     <string name="ureport_contribution_notification_title">New contribution to a story</string>
-    <string name="title_tutorial">Once you register to become a U-Reporter you can:</string>
+    <string name="title_tutorial">Once you register to become a E-Reporter you can:</string>
     <string name="message_send_poll">Sending poll response...</string>
     <string name="message_response_sent">Response sent successfully!</string>
     <string name="message_question_profile_picture">Do you want to change the profile picture?</string>
