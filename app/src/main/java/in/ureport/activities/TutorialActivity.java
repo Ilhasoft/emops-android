@@ -62,7 +62,7 @@ public class TutorialActivity extends AppCompatActivity {
     @NonNull
     private List<Tutorial> getTutorialList() {
         List<Tutorial> tutorialList = new ArrayList<>();
-        tutorialList.add(new Tutorial(getString(R.string.tutorial_title1)
+        tutorialList.add(new Tutorial(getString(R.string.main_stories)
                                     , getString(R.string.tutorial_description1)
                                     , R.drawable.tutorial_item1
                                     , R.color.tutorial_background1));

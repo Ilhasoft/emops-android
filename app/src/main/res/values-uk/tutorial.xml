@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources xmlns:tools="http://schemas.android.com/tools">
-  <string name="tutorial_title1">Створити Історію</string>
-  <string name="tutorial_description1">Додавайте гучності своєму голосу та розповідайте, що відбувається у вашому суспільстві, створюючи історії та обговорюючи їх з іншими</string>
+  <string name="tutorial_title1">Звіти</string>
+  <string name="tutorial_description1">Amplify ваш голос, говорити про те, що відбувається у вашій місії створення звітів та внесення вкладу в доповіді інших користувачів</string>
   <string name="tutorial_title2">Відповідати на опитування</string>
-  <string name="tutorial_description2">Кожного тижня Ви та мільони інших Ю-Репортерів відповідають на важливі для молоді питання. Результати відкриті для всіх</string>
-  <string name="tutorial_title3">Безкоштовний чат</string>
-  <string name="tutorial_description3">Спілкуйтеся з іншими U-репортерами та приєднуйтеся до груп у чаті для обговорення проблем молоді</string>
+  <string name="tutorial_description2">Кожного тижня ви і інші E&#x2011;Журналісти можуть відповісти на опитування про проблеми, що вплинули на молодих людей в кожній програмі польоту. Результати завжди будуть спільно</string>
+  <string name="tutorial_title3">місії</string>
+  <string name="tutorial_description3">Дотримуйтесь місії по всьому світу і бути в курсі всіх нових звітів</string>
 </resources>

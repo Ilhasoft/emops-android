@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources xmlns:tools="http://schemas.android.com/tools">
-  <string name="tutorial_title1">Crea historias</string>
+  <string name="tutorial_title1">Informes</string>
   <string name="tutorial_description1">Amplifica tu voz y comparte lo que está pasando en tu comunidad creando y comentando historias.</string>
   <string name="tutorial_title2">Responde encuestas</string>
-  <string name="tutorial_description2">Semanalmente, y junto a millones de U-Reporters, contesta encuestas sobre temas que te impactan a ti y a tu comunidad. Los resultados serán compartidos.</string>
-  <string name="tutorial_title3">Chatea gratis</string>
-  <string name="tutorial_description3">Chatea con otrxs U-Reporters y sigue grupos que hablen sobre temas que te interesen.</string>
+  <string name="tutorial_description2">Cada semana, usted y otros e&#x2011;reporters pueden responder encuestas acerca de asuntos impactantes de la juventud en cada programa de misión. Resultados siempre serán compartidos.</string>
+  <string name="tutorial_title3">Misións</string>
+  <string name="tutorial_description3">Siga misiones en todo el mundo y estar informado de los nuevos informes</string>
 </resources>

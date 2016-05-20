@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources tools:ignore="MissingTranslation" xmlns:tools="http://schemas.android.com/tools">
     
-    <string name="tutorial_title1">Create Stories</string>
-    <string name="tutorial_description1">Amplify your voice and share what is happening in your community by creating stories and commenting on others</string>
-    <color name="tutorial_background1">#8000cff6</color>
+    <string name="tutorial_title1">Reports</string>
+    <string name="tutorial_description1">Amplify your voice, talk about what\'s happening in your mission creating reports and contributing to reports of other users</string>
+    <color name="tutorial_background1">#00adef</color>
 
     <string name="tutorial_title2">Answer Polls</string>
-    <string name="tutorial_description2">Each week you and millions of other U&#x2011;Reporters can answer polls about issues impacting young people in your community. Results will always be shared</string>
-    <color name="tutorial_background2">#c8ffa500</color>
+    <string name="tutorial_description2">Each week you and other E&#x2011;Reporters can answer polls about issues impacting young people in each Mission Program. Results will always be shared</string>
+    <color name="tutorial_background2">#00adef</color>
 
-    <string name="tutorial_title3">Chat for Free</string>
-    <string name="tutorial_description3">Chat with other U-Reporters and follow Group Chats around youth issues</string>
-    <color name="tutorial_background3">#8000d400</color>
+    <string name="tutorial_title3">Missions</string>
+    <string name="tutorial_description3">Follow missions around the world and stay informed of all new reports</string>
+    <color name="tutorial_background3">#00adef</color>
     
 </resources>
