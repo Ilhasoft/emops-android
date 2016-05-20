@@ -165,7 +165,7 @@ public class EditUserFragment extends UserInfoBaseFragment {
         }
 
         private void updateContactToRapidpro() {
-            SaveContactTask saveContactTask = new SaveContactTask(getActivity(), getCountrySelected(), false) {
+            SaveContactTask saveContactTask = new SaveContactTask(getActivity(), false) {
                 @Override
                 protected void onPostExecute(Contact contact) {
                     super.onPostExecute(contact);

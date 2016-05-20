@@ -3,11 +3,13 @@ package in.ureport.tasks;
 import android.content.Context;
 import android.util.Log;
 
+import java.util.Date;
 import java.util.List;
 
 import in.ureport.R;
 import in.ureport.helpers.AnalyticsHelper;
 import in.ureport.helpers.ContactBuilder;
+import in.ureport.helpers.SntpClient;
 import in.ureport.models.User;
 import in.ureport.flowrunner.models.Contact;
 import in.ureport.models.rapidpro.Field;
@@ -22,9 +24,11 @@ public class SaveContactTask extends ProgressTask<User, Void, Contact> {
     private static final String TAG = "SaveContactTask";
 
     private RapidProServices rapidProServices;
+    private boolean newUser;
 
-    public SaveContactTask(Context context) {
+    public SaveContactTask(Context context, boolean newUser) {
         super(context, R.string.load_message_save_user);
+        this.newUser = newUser;
     }
 
     @Override
@@ -70,21 +74,5 @@ public class SaveContactTask extends ProgressTask<User, Void, Contact> {
         return now;
     }
 
-    private List<CountryInfo> getCountryInfoList() {
-        try {
-            String json = IOHelper.loadJSONFromAsset(getContext(), "countryInfo.json");
-
-            Gson gson = new GsonBuilder().excludeFieldsWithModifiers(Modifier.TRANSIENT).create();
-            Type type = new TypeToken<List<CountryInfo>>(){}.getType();
-
-            JsonParser jsonParser = new JsonParser();
-            JsonObject jsonObject = (JsonObject) jsonParser.parse(json);
-
-            return gson.fromJson(jsonObject.get("geonames"), type);
-        } catch (Exception exception) {
-            Log.e(TAG, "doInBackground: ", exception);
-        }
-        return null;
-    }
 
 }
