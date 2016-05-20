@@ -354,6 +354,8 @@
     <string name="error_message_mission_required">Minimum of 4 characters required</string>
     <string name="message_remove_mission_confirmation">Do you really want to remove this mission?</string>
     <string name="error_message_remove_global">You can\'t update the global mission!</string>
+    <string name="label_web_moderation">Web Moderation</string>
+    <string name="message_authentication_started">Authentication started successfully</string>
 
     <plurals name="files_attached">
         <item quantity="one">%1$s file attached</item>

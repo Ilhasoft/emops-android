@@ -36,7 +36,7 @@ public class SaveContactTask extends ProgressTask<User, Void, Contact> {
             String countryToken = getContext().getString(R.string.rapidpro_token);
             rapidProServices = new RapidProServices(rapidproEndpoint);
 
-            Contact contact = getContactForUser(countryToken, user, countryToken);
+            Contact contact = getContactForUser(countryToken, user, getRegistrationDate(), countryToken);
             return rapidProServices.saveContact(countryToken, contact);
         } catch (Exception exception) {
             AnalyticsHelper.sendException(exception);
@@ -45,11 +45,46 @@ public class SaveContactTask extends ProgressTask<User, Void, Contact> {
         return null;
     }
 
-    private Contact getContactForUser(String token, User user, String countryCode) {
+    private Contact getContactForUser(String token, User user, Date registrationDate, String countryCode) {
         List<Field> fields = rapidProServices.loadFields(token);
 
         ContactBuilder contactBuilder = new ContactBuilder(fields);
-        return contactBuilder.buildContactWithFields(user, countryCode);
+        return contactBuilder.buildContactWithFields(user, registrationDate, countryCode);
+    }
+
+	private Date getRegistrationDate() {
+        if(!newUser) return null;
+
+        Date now = new Date();
+        try {
+            SntpClient client = new SntpClient();
+            if (client.requestTime("pool.ntp.org", 4000)) {
+                long ntpTimeMillis = client.getNtpTime();
+                Log.i(TAG, "getRegistrationDate: ntpTimeMillis: " + new Date(ntpTimeMillis));
+                if (ntpTimeMillis > 0)
+                    now = new Date(ntpTimeMillis);
+            }
+        } catch(Exception exception) {
+            Log.e(TAG, "getRegistrationDate: ", exception);
+        }
+        return now;
+    }
+
+    private List<CountryInfo> getCountryInfoList() {
+        try {
+            String json = IOHelper.loadJSONFromAsset(getContext(), "countryInfo.json");
+
+            Gson gson = new GsonBuilder().excludeFieldsWithModifiers(Modifier.TRANSIENT).create();
+            Type type = new TypeToken<List<CountryInfo>>(){}.getType();
+
+            JsonParser jsonParser = new JsonParser();
+            JsonObject jsonObject = (JsonObject) jsonParser.parse(json);
+
+            return gson.fromJson(jsonObject.get("geonames"), type);
+        } catch (Exception exception) {
+            Log.e(TAG, "doInBackground: ", exception);
+        }
+        return null;
     }
 
 }
