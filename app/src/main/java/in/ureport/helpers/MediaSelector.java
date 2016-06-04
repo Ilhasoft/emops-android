@@ -31,9 +31,10 @@ public class MediaSelector {
     public static final int POSITION_CAMERA = 1;
     public static final int POSITION_YOUTUBE = 2;
     public static final int REQUEST_CODE_WRITE_EXTERNAL_IMAGE_PERMISSION = 201;
-    public static final int REQUEST_CODE_WRITE_EXTERNAL_VIDEO_PERMISSION = 202;
-    public static final int REQUEST_CODE_AUDIO_PERMISSION = 203;
-    public static final int REQUEST_CODE_READ_EXTERNAL_VIDEO_PERMISSION = 204;
+    public static final int REQUEST_CODE_IMAGE_CAMERA_PERMISSION = 202;
+    public static final int REQUEST_CODE_WRITE_EXTERNAL_VIDEO_PERMISSION = 203;
+    public static final int REQUEST_CODE_AUDIO_PERMISSION = 204;
+    public static final int REQUEST_CODE_READ_EXTERNAL_VIDEO_PERMISSION = 205;
 
     private Context context;
 
@@ -111,6 +112,7 @@ public class MediaSelector {
             switch (requestCode) {
                 case REQUEST_CODE_WRITE_EXTERNAL_VIDEO_PERMISSION:
                     pickVideoFromCamera(fragment); break;
+                case REQUEST_CODE_IMAGE_CAMERA_PERMISSION:
                 case REQUEST_CODE_WRITE_EXTERNAL_IMAGE_PERMISSION:
                     pickFromCamera(fragment); break;
                 case REQUEST_CODE_AUDIO_PERMISSION:
@@ -163,6 +165,10 @@ public class MediaSelector {
             , Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
                 fragment.requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}
                         , REQUEST_CODE_WRITE_EXTERNAL_IMAGE_PERMISSION);
+            } else if(ContextCompat.checkSelfPermission(fragment.getActivity()
+            , Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+                fragment.requestPermissions(new String[]{Manifest.permission.CAMERA}
+                        , REQUEST_CODE_IMAGE_CAMERA_PERMISSION);
             } else {
                 MediaPicker mediaPicker = new MediaPicker();
                 imageFromCamera = mediaPicker.pickImageFromCamera(fragment);
