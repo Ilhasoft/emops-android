@@ -44,7 +44,7 @@ public class SendFlowReponsesTask extends ProgressTask<FlowStepSet, Void, Boolea
 
             for (FlowStep flowStep : flowStepSet.getSteps()) {
                 services.sendReceivedMessage(UserManager.getMission()
-                        , getContext().getString(R.string.rapidpro_token)
+                        , getContext().getString(R.string.rapidpro_channel)
                         , contactBuilder.formatUserId(UserManager.getUserId())
                         , getMessageFromStep(flowStep));
                 Thread.sleep(DELAY_BETWEEN_RESPONSES);
